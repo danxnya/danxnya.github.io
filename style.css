@@ -1,39 +1,35 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400");
 
-
 @font-face {
   font-family: "Font";
-  src: url("./JetBrains.ttf");
+  src: url("./items/JetBrains.ttf");
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-
-html {
-  align-items: center;
-  display: flex;
+html, body {
   height: 100%;
-  justify-content: center;
+  margin: 0;
 }
-
 
 body {
   background: #151515;
   cursor: none;
   padding: 1em;
-  display: flex;
   font-family: Font;
-	min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   min-width: 100vw;
-	align-items: center;
-	justify-content: center;
 }
 
 body .cursor {
   pointer-events: none;
 }
+
 body .cursor__ball {
   position: fixed;
   top: 0;
@@ -41,16 +37,17 @@ body .cursor__ball {
   mix-blend-mode: difference;
   z-index: 1000;
 }
+
 body .cursor__ball circle {
-  fill: #f7f8fa;
+  fill: #e296cf;
 }
 
 img {
-  height: 600px;
-  width: 350px;
+  height: 560px;
+  width: 560px;
   margin-right: 2em;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
 }
 
 nav {
@@ -62,8 +59,8 @@ nav {
 }
 
 h1 {
-  color:#ffffff;
-  font-size: 2.6em;
+  color: #e296cf;
+  font-size: 3em;
   font-weight: 600;
   grid-column: 1/-1;
   text-align: center;
@@ -73,10 +70,11 @@ h1 {
 h2 {
   font-size: 1.2em;
   font-weight: 600;
-  color: #c5c5c5;
+  color: #e296cf;
   grid-column: 1/-1;
   text-align: center;
-  margin-bottom: 2.3em;
+  margin-top: 0px;
+  margin-bottom: 2.0em;
 }
 
 ul {
@@ -93,8 +91,8 @@ li {
 
 li:first-child {
   display: inline-block;
-  color: #ffffff;
-  font-size: 1.5em;
+  color: #e296cf;
+  font-size: 1.4em;
   font-weight: 600;
   text-align: center;
   line-height: 2em;
@@ -103,11 +101,12 @@ li:first-child {
 
 a {
   color: #c5c5c5;
-  font-size: 1.3em;
+  font-size: 1.2em;
   text-decoration: none;
 }
 
 a:hover {
-  color: #5e5e5e;
+  color: #e296cf;
   font-style: italic;
+  font-weight: bold;
 }

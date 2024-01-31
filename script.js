@@ -1,3 +1,5 @@
+
+
 const $bigBall = document.querySelector('.cursor__ball--big');
 const $smallBall = document.querySelector('.cursor__ball--small');
 const $hoverables = document.querySelectorAll('.hoverable');
@@ -11,7 +13,7 @@ for (let i = 0; i < $hoverables.length; i++) {
 
 // Move the cursor
 function onMouseMove(e) {
-  TweenMax.to($bigBall, .4, {
+  TweenMax.to($bigBall, .35, {
     x: e.pageX - 15,
     y: e.pageY - 12 });
 
@@ -23,12 +25,38 @@ function onMouseMove(e) {
 
 // Hover an element
 function onMouseHover() {
-  TweenMax.to($bigBall, 0.3, {
-    scale: 3 });
+  TweenMax.to($bigBall, 0.1, {
+    scale: 8 });
 
 }
 function onMouseHoverOut() {
-  TweenMax.to($bigBall, .3, {
+  TweenMax.to($bigBall, .2, {
     scale: 1 });
 
 }
+
+//for date and time
+const dateElement = document.getElementById("date");
+
+// Función para actualizar la hora
+function updateClock() {
+  // Obtén la fecha y hora actual
+  const now = new Date();
+
+  // Formatea la hora, minutos y segundos
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+
+  // Construye la cadena de la hora
+  const timeString = `${hours}:${minutes}:${seconds}`;
+
+  // Actualiza el contenido del elemento h2
+  dateElement.textContent = timeString;
+}
+
+// Actualiza la hora cada segundo
+setInterval(updateClock, 1000);
+
+// Llama a la función para mostrar la hora inicialmente
+updateClock();
