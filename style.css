@@ -15,7 +15,7 @@ html, body {
 }
 
 body {
-  background: #151515;
+  background: #11111B;
   cursor: none;
   padding: 1em;
   font-family: Font;
@@ -39,7 +39,7 @@ body .cursor__ball {
 }
 
 body .cursor__ball circle {
-  fill: #e296cf;
+  fill: #C6AAE8;
 }
 
 img {
@@ -59,7 +59,7 @@ nav {
 }
 
 h1 {
-  color: #e296cf;
+  color: #C6AAE8;
   font-size: 3em;
   font-weight: 600;
   grid-column: 1/-1;
@@ -70,7 +70,7 @@ h1 {
 h2 {
   font-size: 1.2em;
   font-weight: 600;
-  color: #e296cf;
+  color: #C6AAE8;
   grid-column: 1/-1;
   text-align: center;
   margin-top: 0px;
@@ -91,7 +91,7 @@ li {
 
 li:first-child {
   display: inline-block;
-  color: #e296cf;
+  color: #C6AAE8;
   font-size: 1.4em;
   font-weight: 600;
   text-align: center;
