@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400");
 
 @font-face {
-  font-family: "Font";
-  src: url("/fonts/items/JetBrains.ttf");
-}
-
+    font-family: "Font";
+    src: url("/TC3/fonts/items/JetBrains.ttf");
+}    
 
 * {
     box-sizing: border-box;
