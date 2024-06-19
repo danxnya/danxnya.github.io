@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+@font-face {
+  font-family: "Font";
+  src: url("/fonts/items/JetBrains.ttf");
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+
+
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+
+
+body {
+  color: #c6aae8; /* Texto en rojo */
+  font-family: Font;
+
+  background: #11111B;
+  min-height: 100vh;
+
+}
+
+
+
+hr {
+  border: 2px;
+  height: 3px;
+  opacity: 0.7;
+  background-color: #e296cf;
+}
+
+h2 {
+  color: #c5c5c5;
+  font-size: 25px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.nav-item {
+  opacity: 0.8;
+}
+
+.navbar-brand {
+  color: #161616; /* Texto en rojo */
+}
+
+.navbar-nav .nav-link {
+  color: #161616; /* Texto en rojo */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #2c2c2c; /* Texto en rojo */
+}
+
+.navbar-brand:hover {
+  color: #292929; /* Texto en rojo */
+}
+
+.navbar .dropdown-menu {
+  display: block;
+}
+
+.modal-content {
+  border-color: #c6aae8; /* Borde del modal en rojo */
+  border-radius: 10px;
+}
+.modal-header,
+.modal-footer {
+  background-color: #c6aae8; /* Fondo de cabecera y pie del modal en rojo */
+  color: #161616;
+}
+
+.center-vertically-and-horizontally {
+  height: 100vh; /* Fallback for browsers do not support Custom Properties */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color {
+  background-color: #c6aae8;
+  color: #161616;
+}
+
+.color1{
+  background-color: #11111B;
+}
+
+.color2{
+  background-color: #C5C5C5;
+}
+
+
+  .bordered {
+    border: 2px solid #c6aae8;
+    border-radius: 10px;
+  }
