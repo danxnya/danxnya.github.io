@@ -270,7 +270,6 @@ export const extras = new Set([
   "printf",
   "scanf",
   "return",
-  "//",
   "#include",
   "{",
   "}",

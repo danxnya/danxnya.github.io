@@ -12,7 +12,7 @@ export class PDA {
   constructor() {
     this.stack = new Stack();
     this.currentState = "q1";
-    this.acceptStates = new Set(["qa", "q9"]);
+    this.acceptStates = new Set(["qa", "q9", "q10"]);
   }
 
   transition(input) {
@@ -21,6 +21,9 @@ export class PDA {
         if (tiposDeDatos.has(input)) {
           this.stack.push("Z");
           this.currentState = "q9";
+        } else if (input === "//") {
+          this.currentState = "q10";
+
         } else if (palabrasReservadas.has(input)) {
           this.stack.push("Z");
           this.currentState = "q9";
@@ -159,6 +162,11 @@ export class PDA {
         } else {
           this.currentState = "q9";
         }
+        break;
+
+
+      case "q10":
+          this.currentState = "q10";
         break;
 
       default:
