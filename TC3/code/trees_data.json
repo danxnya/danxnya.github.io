@@ -1,0 +1,251 @@
+[
+  {
+    "name": "S",
+    "children": [
+      {
+        "name": "Asignacion",
+        "children": [
+          {
+            "name": "Identificador",
+            "children": [
+              {
+                "name": "Letra",
+                "children": [
+                  {
+                    "name": "a"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "="
+          },
+          {
+            "name": "Expresion",
+            "children": [
+              {
+                "name": "Termino",
+                "children": [
+                  {
+                    "name": "Termino",
+                    "children": [
+                      {
+                        "name": "Factor",
+                        "children": [
+                          {
+                            "name": "("
+                          },
+                          {
+                            "name": "Expresion",
+                            "children": [
+                              {
+                                "name": "Expresion",
+                                "children": [
+                                  {
+                                    "name": "Termino",
+                                    "children": [
+                                      {
+                                        "name": "Factor",
+                                        "children": [
+                                          {
+                                            "name": "Identificador",
+                                            "children": [
+                                              {
+                                                "name": "Letra",
+                                                "children": [
+                                                  {
+                                                    "name": "b"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "name": "+"
+                              },
+                              {
+                                "name": "Termino",
+                                "children": [
+                                  {
+                                    "name": "Factor",
+                                    "children": [
+                                      {
+                                        "name": "Identificador",
+                                        "children": [
+                                          {
+                                            "name": "Letra",
+                                            "children": [
+                                              {
+                                                "name": "c"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "name": ")"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "*"
+                  },
+                  {
+                    "name": "Factor",
+                    "children": [
+                      {
+                        "name": "Identificador",
+                        "children": [
+                          {
+                            "name": "Letra",
+                            "children": [
+                              {
+                                "name": "d"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": ";"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "S",
+    "children": [
+      {
+        "name": "Asignacion",
+        "children": [
+          {
+            "name": "Identificador",
+            "children": [
+              {
+                "name": "Letra",
+                "children": [
+                  {
+                    "name": "p"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "="
+          },
+          {
+            "name": "Expresion",
+            "children": [
+              {
+                "name": "Expresion",
+                "children": [
+                  {
+                    "name": "Termino",
+                    "children": [
+                      {
+                        "name": "Termino",
+                        "children": [
+                          {
+                            "name": "Factor",
+                            "children": [
+                              {
+                                "name": "Identificador",
+                                "children": [
+                                  {
+                                    "name": "Letra",
+                                    "children": [
+                                      {
+                                        "name": "q"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "*"
+                      },
+                      {
+                        "name": "Factor",
+                        "children": [
+                          {
+                            "name": "Identificador",
+                            "children": [
+                              {
+                                "name": "Letra",
+                                "children": [
+                                  {
+                                    "name": "r"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "+"
+              },
+              {
+                "name": "Termino",
+                "children": [
+                  {
+                    "name": "Factor",
+                    "children": [
+                      {
+                        "name": "Identificador",
+                        "children": [
+                          {
+                            "name": "Letra",
+                            "children": [
+                              {
+                                "name": "s"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": ";"
+          }
+        ]
+      }
+    ]
+  }
+]
