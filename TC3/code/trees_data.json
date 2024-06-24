@@ -28,48 +28,17 @@
                 "name": "Termino",
                 "children": [
                   {
-                    "name": "Termino",
+                    "name": "Factor",
                     "children": [
                       {
-                        "name": "Factor",
+                        "name": "("
+                      },
+                      {
+                        "name": "Expresion",
                         "children": [
-                          {
-                            "name": "("
-                          },
                           {
                             "name": "Expresion",
                             "children": [
-                              {
-                                "name": "Expresion",
-                                "children": [
-                                  {
-                                    "name": "Termino",
-                                    "children": [
-                                      {
-                                        "name": "Factor",
-                                        "children": [
-                                          {
-                                            "name": "Identificador",
-                                            "children": [
-                                              {
-                                                "name": "Letra",
-                                                "children": [
-                                                  {
-                                                    "name": "b"
-                                                  }
-                                                ]
-                                              }
-                                            ]
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "+"
-                              },
                               {
                                 "name": "Termino",
                                 "children": [
@@ -83,7 +52,7 @@
                                             "name": "Letra",
                                             "children": [
                                               {
-                                                "name": "c"
+                                                "name": "b"
                                               }
                                             ]
                                           }
@@ -96,144 +65,87 @@
                             ]
                           },
                           {
-                            "name": ")"
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "*"
-                  },
-                  {
-                    "name": "Factor",
-                    "children": [
-                      {
-                        "name": "Identificador",
-                        "children": [
+                            "name": "+"
+                          },
                           {
-                            "name": "Letra",
+                            "name": "Termino",
                             "children": [
                               {
-                                "name": "d"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": ";"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "S",
-    "children": [
-      {
-        "name": "Asignacion",
-        "children": [
-          {
-            "name": "Identificador",
-            "children": [
-              {
-                "name": "Letra",
-                "children": [
-                  {
-                    "name": "p"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "="
-          },
-          {
-            "name": "Expresion",
-            "children": [
-              {
-                "name": "Expresion",
-                "children": [
-                  {
-                    "name": "Termino",
-                    "children": [
-                      {
-                        "name": "Termino",
-                        "children": [
-                          {
-                            "name": "Factor",
-                            "children": [
-                              {
-                                "name": "Identificador",
+                                "name": "Factor",
                                 "children": [
                                   {
-                                    "name": "Letra",
+                                    "name": "("
+                                  },
+                                  {
+                                    "name": "Expresion",
                                     "children": [
                                       {
-                                        "name": "q"
+                                        "name": "Termino",
+                                        "children": [
+                                          {
+                                            "name": "Termino",
+                                            "children": [
+                                              {
+                                                "name": "Factor",
+                                                "children": [
+                                                  {
+                                                    "name": "Identificador",
+                                                    "children": [
+                                                      {
+                                                        "name": "Letra",
+                                                        "children": [
+                                                          {
+                                                            "name": "c"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "name": "/"
+                                          },
+                                          {
+                                            "name": "Factor",
+                                            "children": [
+                                              {
+                                                "name": "Numero",
+                                                "children": [
+                                                  {
+                                                    "name": "Entero",
+                                                    "children": [
+                                                      {
+                                                        "name": "Digito",
+                                                        "children": [
+                                                          {
+                                                            "name": "0"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
                                       }
                                     ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "name": "*"
-                      },
-                      {
-                        "name": "Factor",
-                        "children": [
-                          {
-                            "name": "Identificador",
-                            "children": [
-                              {
-                                "name": "Letra",
-                                "children": [
+                                  },
                                   {
-                                    "name": "r"
+                                    "name": ")"
                                   }
                                 ]
                               }
                             ]
                           }
                         ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "+"
-              },
-              {
-                "name": "Termino",
-                "children": [
-                  {
-                    "name": "Factor",
-                    "children": [
+                      },
                       {
-                        "name": "Identificador",
-                        "children": [
-                          {
-                            "name": "Letra",
-                            "children": [
-                              {
-                                "name": "s"
-                              }
-                            ]
-                          }
-                        ]
+                        "name": ")"
                       }
                     ]
                   }
