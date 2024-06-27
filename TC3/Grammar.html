@@ -20,6 +20,23 @@
             text-align: justify;
             text-justify: inter-word;
         }
+        
+        .typing-animation {
+            border-right: .15em solid rgb(255, 255, 255); /* Cursor de la escritura */
+            white-space: nowrap; /* Evita el salto de línea */
+            overflow: hidden; /* Oculta el texto que se desborda */
+            animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: rgba(255, 255, 255, 0); }
+        }
     </style>
     <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -35,10 +52,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Grafo <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/TC3/graph.html">Grafo <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/TC3/three.html">Arbol</a>
+                    <a class="nav-link" href="/TC3/code/three.html">Arbol</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/TC3/Grammar.html">Gramatica</a>
@@ -50,67 +67,75 @@
     <div class="center-vertically-and-horizontally">
         <div class="text-center" style="font-size: 50px;">
             <!-- Texto latex -->
-            <p>$$ G = ( \space \{ \space K \space \}, \space \{ \space L \space \}, \space S, \space \{ \space P \space \} \space ) $$</p>
+            <p class="typing-animation">$$ G = ( \space \{ \space K \space \}, \space \{ \space L \space \}, \space S, \space \{ \space P \space \} \space ) $$</p>
         </div>
     </div>
     <br>
     <br>
     <br>
     <br>
-    <div>
-        <hr>
-            <br>
-            <br>
-            <br>
-        <div class="text-center">
-            <h1>Gramatica independiente de contexto</h1>
-            <br>
-            <br>
-            <br>
+    <hr>
+
+    <div class="container">
+        <div>
+            <h1 class="text-center">Gramatica independiente de contexto</h1>
+        </div>
+        <div>
+            <div class="text-center">
+                <br>
+                <p style="font-size: 20px;"><b> Donde 'K' es el conjunto de simbolos No terminales </b></p>
+                <!-- Lista de simbolos no terminales -->
+                <p style="color:#45475a;"> K = Asignacion <br> Identificador <br> Expresion <br> Termino <br> Factor <br> Numero <br> Hexadecimal <br> NotacionCientifica </p>
+                <br>
+                <p style="font-size: 20px;"><b> Donde 'L' es el conjunto de simbolos Terminales </b></p>
+                <!-- Lista de simbolos terminales -->
+                <p style="color:#45475a;"> L = + <br> - <br> * <br> / <br> ^ <br> ( <br> ) <br> ; <br> = <br> , <br> . <br> 0 ... 9 <br> a ... z <br> A ... Z </p>
+                <br>
+                <p style="font-size: 20px;"><b> Donde 'P' es el conjunto de reglas de produccion </b></p>
+                <!-- Lista de reglas de produccion -->
+                <ol style="color:#45475a;" class="text-center"> 
+                    <li>S -> Asignacion </li>
+                    <li>Asignacion -> Identificador = Expresion ; | Identificador = Asignacion </li> 
+                    <li>Expresion -> Expresion + Termino | Expresion - Termino | Termino </li> 
+                    <li>Termino -> Termino * Factor | Termino / Factor | Termino % Factor | Factor</li> 
+                    <li>Factor -> ( Expresion ) | Numero | Identificador</li> 
+                    <li>Numero -> Entero | Hexadecimal | NotacionCientifica</li> 
+                    <li>Identificador -> Letra ( Letra | Digito )*</li> 
+                    <li>Hexadecimal -> 0x ( Digito | A ... F )*</li> 
+                    <li>NotacionCientifica -> Digito+ . Digito+ ( E | e ) [ + | - ] Digito+</li> 
+                    <li>Entero -> Digito+</li> 
+                    <li>DigitoHexadecimal -> 0 ... 9 | A ... F</li> 
+                    <li>Letra -> a ... z | A ... Z</li> 
+                    <li>Digito -> 0 ... 9</li> 
+                </ol>
+                <br>
+            </div>
         </div>
     </div>
-    <div class="center-vertically-and-horizontally">
-        <div class="text-center">
-            <br>
-            <p style="font-size: 20px;"><b> Donde 'K' es el conjunto de simbolos No terminales </b></p>
-            <!-- Lista de simbolos no terminales -->
-            <p style="color:#45475a;"> K = Asignacion <br> Identificador <br> Expresion <br> Termino <br> Factor <br> Numero <br> Hexadecimal <br> NotacionCientifica </p>
-            <br>
-            <p style="font-size: 20px;"><b> Donde 'L' es el conjunto de simbolos Terminales </b></p>
-            <!-- Lista de simbolos terminales -->
-            <p style="color:#45475a;"> L = + <br> - <br> * <br> / <br> ^ <br> ( <br> ) <br> ; <br> = <br> , <br> . <br> 0 ... 9 <br> a ... z <br> A ... Z </p>
-            <br>
-            <p style="font-size: 20px;"><b> Donde 'P' es el conjunto de reglas de produccion </b></p>
-            <!-- Lista de reglas de produccion -->
-            <ol style="color:#45475a;"> 
-                <li>S -> Asignacion </li>
-                <li>Asignacion -> Identificador = Expresion ; | Identificador = Asignacion </li> 
-                <li>Expresion -> Expresion + Termino | Expresion - Termino | Termino </li> 
-                <li>Termino -> Termino * Factor | Termino / Factor | Termino % Factor | Factor</li> 
-                <li>Factor -> ( Expresion ) | Numero | Identificador</li> 
-                <li>Numero -> Entero | Hexadecimal | NotacionCientifica</li> 
-                <li>Identificador -> Letra ( Letra | Digito )*</li> 
-                <li>Hexadecimal -> 0x ( Digito | A ... F )*</li> 
-                <li>NotacionCientifica -> Digito+ . Digito+ ( E | e ) [ + | - ] Digito+</li> 
-                <li>Entero -> Digito+</li> 
-                <li>DigitoHexadecimal -> 0 ... 9 | A ... F</li> 
-                <li>Letra -> a ... z | A ... Z</li> 
-                <li>Digito -> 0 ... 9</li> 
-                
-            </ol>
-            <br>
-
-        
-        </div>
-
-
-    </div>
-
     <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="module" src="/TC3/js/App.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const textElement = document.querySelector('.typing-animation');
+            const text = textElement.textContent;
+            textElement.textContent = '';
+            let i = 0;
+            const speed = 80;
+
+            function typeWriter() {
+                if (i < text.length) {
+                    textElement.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+
+            typeWriter();
+        });
+    </script>
 </body>
 </html>

@@ -5,18 +5,18 @@ states, valid, solved, path = set(), set(), set(), set()
 DFA = []
 k = 0
 
-def Formater(line):
+def Formatter(line):
     tokens = [token for token in line.split() if token]
     return tokens
 
 def AlphabetA(line):
-    tokens = Formater(line)
+    tokens = Formatter(line)
     for token in tokens:
         a.add(token)
 
 def StatesS(line):
     global k
-    tokens = Formater(line)
+    tokens = Formatter(line)
     for token in tokens:
         try:
             cID = int(token[1:])  # Convertir la parte numérica del estado a entero
@@ -26,7 +26,7 @@ def StatesS(line):
     k = len(tokens)
 
 def ValidValid(line):
-    tokens = Formater(line)
+    tokens = Formatter(line)
     for token in tokens:
         try:
             cID = int(token[1:])  # Convertir la parte numérica del estado a entero
@@ -35,7 +35,7 @@ def ValidValid(line):
             print(f"Error al convertir {token} a entero: {e}")
 
 def Cleaner(line):
-    tokens = Formater(line)
+    tokens = Formatter(line)
     ans = []
     for token in tokens[2:]:
         if token not in ['+', '/']:

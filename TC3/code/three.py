@@ -11,11 +11,11 @@ grammar = CFG.fromstring("""
     Factor -> '(' Expresion ')' | Numero | Identificador
     Numero -> Entero | Hexadecimal | NotacionCientifica
     Identificador -> Letra
-    Hexadecimal -> '0' 'x' Hexadigit
+    Hexadecimal -> '0''x'Hexadigit
     Entero -> Digito
     Hexadigit -> '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'a' | 'b' | 'c' | 'd' | 'e' | 'f'
-    Letra -> 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z'
-    Digito -> '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'
+    Letra -> 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k' | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u' | 'v' | 'w' | 'x' | 'y' | 'z' | 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | 'I' | 'J' | 'K' | 'L' | 'M' | 'N' | 'O' | 'P' | 'Q' | 'R' | 'S' | 'T' | 'U' | 'V' | 'W' | 'X' | 'Y' | 'Z' | 'AB' | 'ABC' | 'VAR' | 'var' | 'Var1' | 'Var2' | 'Var3' | 'CatA' | 'CatB' | 'CatC' | 'CatD' | 'CatE' | 'CatF' | 'var11' | 'var12' | 'var13' | 'var14' | 'var15' | 'A2' | 'A1' | '12' | 'C5' | 'AC'
+    Digito -> '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '0312' | '0x12AB' | '5.12E+12' | '340' | '12' | '100' | '59'
 """)
 
 # Crear el parser

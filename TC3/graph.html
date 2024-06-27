@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Autómata con D3.js</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="icon" href="/TC3/fonts/items/ico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/TC3/css/main.css" />
+
+    <style>
+        .node circle {
+            fill: #ffffff;
+            stroke: #b8ccc7;
+            stroke-width: 1.5px;
+        }
+
+        .node text {
+            font: 12px sans-serif;
+            fill: #800080; /* Color morado */
+            pointer-events: none;
+        }
+
+        .link {
+            fill: none;
+            stroke: #b3b3b3;
+            stroke-width: 1.5px;
+            opacity: 0.3;
+        }
+
+        .link-label {
+            fill: #800080; /* Color morado */
+            font: 12px sans-serif;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar color">
+        <a class="navbar-brand" href="/TC3/index.html">PDA Validador de sintaxis</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/TC3/graph.html">Grafo <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/TC3/code/three.html">Arbol</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/TC3/Grammar.html">Gramatica</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center">Autómata Finito</h1>
+        <div id="graph"></div>
+    </div>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script>
+        const nodes = [
+            { id: 'q1', reflexive: false },
+            { id: 'q2', reflexive: false },
+            { id: 'q3', reflexive: false },
+            { id: 'q4', reflexive: false },
+            { id: 'q5', reflexive: false },
+            { id: 'q6', reflexive: false },
+            { id: 'q7', reflexive: false },
+            { id: 'q8', reflexive: false }
+        ];
+
+        const links = [
+            { source: 'q1', target: 'q2', left: false, right: true, label: 'IDE, λ/Z' },
+            { source: 'q2', target: 'q3', left: false, right: true, label: '=, Z/Z' },
+            { source: 'q3', target: 'q3', left: false, right: true, label: '(, Z/A\n(, A/A\n), A/λ\nZ/λ' }
+        ];
+
+        const svg = d3.select('#graph').append('svg')
+            .attr('width', '100%')
+            .attr('height', 600);
+
+        const simulation = d3.forceSimulation(nodes)
+            .force('link', d3.forceLink(links).id(d => d.id).distance(200))
+            .force('charge', d3.forceManyBody().strength(-500))
+            .force('center', d3.forceCenter(svg.node().getBoundingClientRect().width / 2, 300));
+
+        const link = svg.append('g')
+            .selectAll('line')
+            .data(links)
+            .enter().append('line')
+            .attr('class', 'link');
+
+        const node = svg.append('g')
+            .selectAll('circle')
+            .data(nodes)
+            .enter().append('circle')
+            .attr('class', 'node')
+            .attr('r', 20)
+            .call(d3.drag()
+                .on('start', dragstarted)
+                .on('drag', dragged)
+                .on('end', dragended));
+
+        const text = svg.append('g')
+            .selectAll('text')
+            .data(nodes)
+            .enter().append('text')
+            .attr('x', -10)
+            .attr('y', 3)
+            .text(d => d.id);
+
+        const linkText = svg.append('g')
+            .selectAll('text')
+            .data(links)
+            .enter().append('text')
+            .attr('class', 'link-label')
+            .selectAll('tspan')
+            .data(d => d.label.split('\n').map((line, i) => ({ line, i, link: d })))
+            .enter().append('tspan')
+            .attr('x', d => (d.link.source.x + d.link.target.x) / 2)
+            .attr('y', d => (d.link.source.y + d.link.target.y) / 2 - (d.i * 12)) // Ajusta el espaciado vertical entre líneas
+            .text(d => d.line);
+
+        simulation.on('tick', () => {
+            link
+                .attr('x1', d => d.source.x)
+                .attr('y1', d => d.source.y)
+                .attr('x2', d => d.target.x)
+                .attr('y2', d => d.target.y);
+
+            node
+                .attr('cx', d => d.x)
+                .attr('cy', d => d.y);
+
+            text
+                .attr('x', d => d.x)
+                .attr('y', d => d.y);
+
+            linkText.selectAll('tspan')
+                .attr('x', d => (d.link.source.x + d.link.target.x) / 2)
+                .attr('y', d => (d.link.source.y + d.link.target.y) / 2 - (d.i * 12));
+        });
+
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+    </script>
+</body>
+</html>
