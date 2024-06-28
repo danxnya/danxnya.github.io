@@ -1,10 +1,23 @@
+#include <stdio.h>
 
+int main ()
+{
+int A2, A1, C5, AB, A, B, ABC, C, AC, Var1, Var2, Var3, VAR;
+int CatA, CatB, CatC, CatD, CatF, var, var11, var12, var13, var14, var15;
+int x;
+double info, cateto1, cateto2;
+int temp, val1, val2;
+
+
+var = ( ) ;
 
 x = int * 2 + x ;
 info = cateto1 + cateto2 + ( ) - ) * ( ;
 VAR = ( CatA + ( CatA + CatB ) * CatC ) ) * ( CatD - CatF ) ;
 VAR = ( CatA + ( ( CatA + CatB ) * CatC ) ) * ( CatD - CatF ;
 temp = 0284 * 0x1X2 - 3.14EE1.3 ;
+
 typedef = val1 % val2 ;
 
-
+return 0;
+}

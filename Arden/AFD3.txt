@@ -1,0 +1,5 @@
+a b
+X0 X1
+X0
+X0 = bX0 + aX1
+X1 = aX0 + bX1

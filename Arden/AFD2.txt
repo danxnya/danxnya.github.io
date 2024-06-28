@@ -1,0 +1,6 @@
+a b
+X0 X1 X2
+X1
+X0 = aX1 + bX2
+X1 = aX0 + bX2 + /
+X2 = bX2 + aX0

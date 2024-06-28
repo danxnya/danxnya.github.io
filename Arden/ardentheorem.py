@@ -50,7 +50,7 @@ def MakeNet(conect):
     for item in conect:
         try:
             parts = item.split('X')
-            path = parts[0] if parts[0] != '/' else 'λ'  # Tratar "/" como λ
+            path = parts[0] if parts[0] != '/' else 'λ' 
             ID = int(parts[1])
             if ID in net:
                 net[ID] = PlusExpresion(net[ID], path)
